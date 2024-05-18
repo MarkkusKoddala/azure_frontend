@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
 COPY script.js /usr/share/nginx/html/script.js
-COPY public/index.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html
 
 EXPOSE 80
