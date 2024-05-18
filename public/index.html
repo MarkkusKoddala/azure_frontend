@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ee">
+<head>
+    <meta charset="UTF-8">
+    <title>Raamatute haldamise veebirakendus</title>
+
+    <script type="text/javascript" src="../script.js"></script>
+
+    <script>
+        window.onload=function(){
+            const frontForm = document.getElementById("frontform");
+            frontForm.addEventListener("submit", handleFormSubmit);
+
+            const otsingForm = document.getElementById("otsinguform");
+            otsingForm.addEventListener("submit", handleFormSubmit);
+
+            listiraamatud();
+        }
+    </script>
+</head>
+
+<body>
+
+Raamatu alla laadimine Gutenbergist:
+
+<form action="https://hs9-flask-api-raamatud.azurewebsites.net/raamatud" id="frontform">
+    <label for="raamat_id">
+        <strong>Raamatu id:</strong>
+        <input type="text" name="raamat_id" id="raamat_id">
+    </label>
+    <input type="submit" value="Lae alla raamat">
+</form>
+<br />
+
+Raamatust sõne otsimine:
+<form action="https://hs9-flask-api-raamatute-otsing.azurewebsites.net/raamatu_otsing" id="otsinguform">
+    <label for="raamat_id">
+        <strong>Raamatu id:</strong>
+        <input type="text" name="raamat_id" id="raamat_id2">
+        <strong>Sõne:</strong>
+        <input type="text" name="sone" id="sone">
+    </label>
+    <input type="submit" value="Otsi raamatust">
+</form>
+
+<br />
+<div id="tulemus"></div>
+<br />
+
+
+Raamatud:
+
+<div id="raamatud_result"></div>
+
+</body>
+</html>
