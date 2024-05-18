@@ -72,12 +72,12 @@ function handleResponse(form, responseData) {
 
 // Funktsioon raamatute nimekirja uuendamiseks
 async function listiraamatud() {
-    const responseData = await getDataAsJson("http://hs9-flask-api-raamatud.azurewebsites.net/raamatud");
+    const responseData = await getDataAsJson("https://hs9-flask-api-raamatud.azurewebsites.net/raamatud");
     console.log(responseData)
     const resultElement = document.getElementById("raamatud_result");
     resultElement.innerHTML = "";
     for (let raamat of responseData) {
         let raamatNimi = raamat.split('.')[0];
-        resultElement.innerHTML += `<a href="http://hs9-flask-api-raamatud.azurewebsites.net/raamatud/${raamatNimi}" download="${raamatNimi}">${raamat}</a> <a href="#" onclick="deleteObject('http://hs9-flask-api-raamatud.azurewebsites.net/raamatud/${raamatNimi}')">[kustuta]</a><br />`;
+        resultElement.innerHTML += `<a href="https://hs9-flask-api-raamatud.azurewebsites.net/raamatud/${raamatNimi}" download="${raamatNimi}">${raamat}</a> <a href="#" onclick="deleteObject('https://hs9-flask-api-raamatud.azurewebsites.net/raamatud/${raamatNimi}')">[kustuta]</a><br />`;
     }
 }
